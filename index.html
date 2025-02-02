@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CodeLabsGame</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.png">
+  <style>
+  </style>
+</head>
+<body>
+  <!-- Main Menu -->
+  <div id="main-menu">
+    <h1 id="game-title">Clash of Titans</h1>
+    <ul id="menu-options">
+      <li onclick="startGame()">Start Game</li>
+      <li onclick="openControls()">Controls</li>
+      <li onclick="quitGame()">Quit Game</li>
+    </ul>
+  </div>
+
+  <!-- Game Canvas -->
+  <div class="gameCanvas">
+    <canvas id="gameCanvas"></canvas>
+  </div>
+
+<!-- Controls Modal -->
+  <div id="modal-overlay" onclick="closeControls()"></div>
+  <div id="controls-modal">
+    <h2>Controls</h2>
+    <ul>
+      <li><strong>Player 1:</strong> W - Jump, A - Left, D - Right, Space - Attack</li>
+      <li><strong>Player 2:</strong> Arrow Up - Jump, Arrow Left - Left, Arrow Right - Right, Enter - Attack</li>
+    </ul>
+    <button onclick="closeControls()">Close</button>
+  </div>
+
+<!-- Return to Menu Button -->
+<button id="return-to-menu-button" style="display: none;" onclick="returnToMenu()">Return to Menu</button>
+
+  <script type="module" src="./scripts/modules/main.js"></script>
+  <script type="module" src="./scripts/modules/input.js"></script>
+  <script type="module" src="./scripts/modules/global.js"></script>
+<script>
+    function openControls() {
+      document.getElementById('controls-modal').style.display = 'block';
+      document.getElementById('modal-overlay').style.display = 'block';
+    }
+
+    function closeControls() {
+      document.getElementById('controls-modal').style.display = 'none';
+      document.getElementById('modal-overlay').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

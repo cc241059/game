@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+  background: black; /* Black background outside the canvas */
+  color: white;
+  text-align: center;
+  display: flex; /* Flexbox to center the canvas */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+#main-menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#gameCanvas {
+  display: block; /* Ensure the canvas is visible */
+  width: auto; /* Maintain aspect ratio */
+  height: 720px; /* Fixed height */
+  background: url('../images/backgroundtest.png') no-repeat center center;
+  background-size: cover;
+}
+
+#game-title {
+  font-size: 4.5em;
+  margin-bottom: 30px;
+  margin-top: -100px;
+}
+
+#menu-options {
+  list-style: none;
+  padding: 100px 0 0 0;
+}
+
+#menu-options li {
+  font-size: 2em;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#menu-options li:hover {
+  color: #ff9900;
+}
+
+/* Global font style */
+* {
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* Health bars container */
+#healthbars-container {
+  position: absolute;
+  top: 20px; /* Below the timer */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 2;
+}
+
+/* Health bar basic styling */
+.healthbar {
+  height: 30px;
+  width: 40%; /* Space for both health bars */
+  background-color: red;
+  border: 4px solid white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Player health - display current health */
+.healthbar-inner {
+  height: 100%;
+  background-color: #818cf8; /* Changed to blue (as in your code) */
+  width: 100%;
+}
+
+#controls-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(50, 50, 50, 0.9); /* Tmavosivé priehľadné pozadie */
+  color: #fff; /* Farba textu pre modálne okno */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  z-index: 1000;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+#controls-modal h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #f0f0f0; /* Svetlosivá farba nadpisu */
+}
+#controls-modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+#controls-modal ul li {
+  margin: 10px 0;
+  color: #ccc; /* Svetlosivý text pre zoznam */
+}
+#controls-modal button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #444; /* Tmavosivé tlačidlo */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#controls-modal button:hover {
+  background-color: #666; /* Svetlejšia sivá pri hover */
+}
+#modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Polopriehľadný čierny overlay */
+  z-index: 999;
+}
+
